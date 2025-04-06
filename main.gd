@@ -99,10 +99,23 @@ func next_turn() -> void:
 	if turn == TURNS.PLAYER:
 		turn = TURNS.AI
 		$HUD.set_turn("Opponent")
+		ai_turn()
 	else:
 		turn = TURNS.PLAYER
+		$HUD.display_info("Your turn.")
 		$HUD.set_turn("You")
+
+
+func ai_turn() -> void:
+	var score = sum_array(p2hand)
+	while score < 17:
+		await get_tree().create_timer(.5).timeout
+		if deck.is_empty():
+			break
+		draw_card_opp()
+		score = sum_array(p2hand)
 	
+	ai_stay()
 
 
 func reset_round() -> void:
@@ -114,6 +127,7 @@ func reset_round() -> void:
 	turn = TURNS.PLAYER
 	get_tree().call_group("cards", "queue_free")
 	$HUD.updateScore(playerScore, oppScore)
+	$HUD.set_turn("You")
 	$P1HandPath/CardSpawnLocation.progress = 0
 	$P2HandPath/CardSpawnLocation.progress = 0
 	hiddenCard = null
@@ -127,12 +141,12 @@ func start_new_round() -> void:
 	draw_card_player()
 	draw_card_opp()
 	playTo = 21
+	$HUD.enable_buttons()
 
 
 func showdown() -> void:
-	if roundOver:
-		return
-	hiddenCard.show_value()
+	if hiddenCard != null:
+		hiddenCard.show_value()
 	$CardSoundPlayer.play()
 	playerScore = sum_array(p1hand)
 	oppScore = sum_array(p2hand)
@@ -143,11 +157,10 @@ func showdown() -> void:
 		$HUD.display_info("Opponent wins.")
 	else:
 		$HUD.display_info("Draw.")
-	roundOver = true
+	$HUD.disable_buttons()
 
 
 func ai_stay() -> void:
-	print('here')
 	if not turn == TURNS.AI:
 		return
 	if stayed == true:

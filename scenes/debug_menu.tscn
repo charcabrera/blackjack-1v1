@@ -6,6 +6,7 @@
 script = ExtResource("1_u3ugm")
 
 [node name="AIHitButton" type="Button" parent="."]
+visible = false
 offset_left = 1024.0
 offset_top = 32.0
 offset_right = 1104.0
@@ -13,6 +14,7 @@ offset_bottom = 63.0
 text = "Hit AI"
 
 [node name="AIStayButton" type="Button" parent="."]
+visible = false
 offset_left = 1024.0
 offset_top = 72.0
 offset_right = 1104.0
@@ -20,6 +22,7 @@ offset_bottom = 103.0
 text = "Stay AI"
 
 [node name="ShowdownButton" type="Button" parent="."]
+visible = false
 offset_left = 1024.0
 offset_top = 112.0
 offset_right = 1117.0
@@ -27,6 +30,7 @@ offset_bottom = 143.0
 text = "Showdown"
 
 [node name="ResetButton" type="Button" parent="."]
+visible = false
 offset_left = 1024.0
 offset_top = 152.0
 offset_right = 1075.0

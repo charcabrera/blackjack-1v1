@@ -36,6 +36,16 @@ func showdownScore(player1: int, player2: int) -> void:
 	$ScoreLabel.text = scoreFormatString % [str(oppScore), str(playerScore)]
 
 
+func disable_buttons() -> void:
+	$HitButton.disabled = true
+	$StayButton.disabled = true
+
+
+func enable_buttons() -> void:
+	$HitButton.disabled = false
+	$StayButton.disabled = false
+
+
 func set_turn(player: String):
 	$TurnTrackerLabel.text = turnTrackerFormatString % [player]
 

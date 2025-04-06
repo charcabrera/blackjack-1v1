@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq3jltrxvm85b"]
+
+[ext_resource type="Script" uid="uid://c2byk1vm1atip" path="res://card.gd" id="1_kikvd"]
+[ext_resource type="FontFile" uid="uid://pqgvjroxqr2s" path="res://fonts/Xolonium-Regular.ttf" id="1_rjlel"]
+
+[node name="Card" type="ColorRect"]
+offset_right = 75.0
+offset_bottom = 105.0
+script = ExtResource("1_kikvd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_rjlel")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1

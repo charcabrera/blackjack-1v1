@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgq0m8mlraghh"]
+
+[ext_resource type="Script" uid="uid://ctqx3e8el1eku" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="FontFile" uid="uid://pqgvjroxqr2s" path="res://fonts/Xolonium-Regular.ttf" id="2_8sq4i"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_64ctp")
+
+[node name="InfoLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -11.5
+offset_right = 81.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_8sq4i")
+theme_override_font_sizes/font_size = 40
+text = "No cards left in deck."
+
+[node name="HitButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 544.0
+offset_right = 1104.0
+offset_bottom = 575.0
+text = "Hit Me"
+
+[node name="StayButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 584.0
+offset_right = 1104.0
+offset_bottom = 615.0
+text = "Stay"
+
+[node name="InfoTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_8sq4i")
+theme_override_font_sizes/font_size = 26
+
+[node name="TurnTrackerLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = 44.0
+offset_right = 67.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Current Turn: You"
+
+[connection signal="pressed" from="HitButton" to="." method="_on_hit_button_pressed"]
+[connection signal="pressed" from="StayButton" to="." method="_on_stay_button_pressed"]
+[connection signal="timeout" from="InfoTimer" to="." method="_on_info_timer_timeout"]

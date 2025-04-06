@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5sy4nivoel18"]
+
+[ext_resource type="Script" uid="uid://jo3jf2pvlmab" path="res://debug_menu.gd" id="1_u3ugm"]
+
+[node name="DebugMenu" type="CanvasLayer"]
+script = ExtResource("1_u3ugm")
+
+[node name="AIHitButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 32.0
+offset_right = 1104.0
+offset_bottom = 63.0
+text = "Hit AI"
+
+[node name="AIStayButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 72.0
+offset_right = 1104.0
+offset_bottom = 103.0
+text = "Stay AI"
+
+[connection signal="pressed" from="AIHitButton" to="." method="_on_ai_hit_button_pressed"]
+[connection signal="pressed" from="AIStayButton" to="." method="_on_ai_stay_button_pressed"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4lxv8pcrm6dl"]
+
+[ext_resource type="Script" uid="uid://cimapkrh72lw7" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cq3jltrxvm85b" path="res://card.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bgq0m8mlraghh" path="res://hud.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c5sy4nivoel18" path="res://debug_menu.tscn" id="4_lquwl"]
+
+[sub_resource type="Curve2D" id="Curve2D_1bvp3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 512, 0, 0, 0, 0, 1024, 512)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_lquwl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 64, 0, 0, 0, 0, 1024, 64)
+}
+point_count = 2
+
+[node name="Main" type="Node"]
+script = ExtResource("1_h2yge")
+card_scene = ExtResource("2_0xm2m")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.580392, 0.929412, 1)
+
+[node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="DebugMenu" parent="." instance=ExtResource("4_lquwl")]
+
+[node name="P1HandPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1bvp3")
+
+[node name="CardSpawnLocation" type="PathFollow2D" parent="P1HandPath"]
+position = Vector2(128, 512)
+
+[node name="P2HandPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_lquwl")
+
+[node name="CardSpawnLocation" type="PathFollow2D" parent="P2HandPath"]
+position = Vector2(128, 64)
+
+[connection signal="hit" from="HUD" to="." method="_on_hud_hit"]
+[connection signal="hit" from="DebugMenu" to="." method="_on_debug_menu_hit"]
+[connection signal="stay" from="DebugMenu" to="." method="_on_debug_menu_stay"]

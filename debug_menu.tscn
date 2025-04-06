@@ -19,5 +19,29 @@ offset_right = 1104.0
 offset_bottom = 103.0
 text = "Stay AI"
 
+[node name="ShowdownButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 112.0
+offset_right = 1117.0
+offset_bottom = 143.0
+text = "Showdown"
+
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 1024.0
+offset_top = 152.0
+offset_right = 1075.0
+offset_bottom = 183.0
+text = "Reset"
+
+[node name="StartNewRoundButton" type="Button" parent="."]
+offset_left = 992.0
+offset_top = 192.0
+offset_right = 1132.0
+offset_bottom = 223.0
+text = "Start New Round"
+
 [connection signal="pressed" from="AIHitButton" to="." method="_on_ai_hit_button_pressed"]
 [connection signal="pressed" from="AIStayButton" to="." method="_on_ai_stay_button_pressed"]
+[connection signal="pressed" from="ShowdownButton" to="." method="_on_showdown_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="StartNewRoundButton" to="." method="_on_start_new_round_button_pressed"]

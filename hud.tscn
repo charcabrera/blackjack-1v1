@@ -13,15 +13,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -11.5
-offset_right = 81.0
-offset_bottom = 11.5
+offset_left = -221.5
+offset_top = -24.5
+offset_right = 221.5
+offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_8sq4i")
 theme_override_font_sizes/font_size = 40
 text = "No cards left in deck."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HitButton" type="Button" parent="."]
 offset_left = 1024.0
@@ -53,6 +55,7 @@ theme_override_fonts/font = ExtResource("2_8sq4i")
 theme_override_font_sizes/font_size = 26
 
 [node name="TurnTrackerLabel" type="Label" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

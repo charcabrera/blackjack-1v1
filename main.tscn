@@ -47,4 +47,7 @@ position = Vector2(128, 64)
 
 [connection signal="hit" from="HUD" to="." method="_on_hud_hit"]
 [connection signal="hit" from="DebugMenu" to="." method="_on_debug_menu_hit"]
+[connection signal="reset" from="DebugMenu" to="." method="_on_debug_menu_reset"]
+[connection signal="showdown" from="DebugMenu" to="." method="_on_debug_menu_showdown"]
+[connection signal="start" from="DebugMenu" to="." method="_on_debug_menu_start"]
 [connection signal="stay" from="DebugMenu" to="." method="_on_debug_menu_stay"]

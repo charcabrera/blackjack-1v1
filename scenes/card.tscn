@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq3jltrxvm85b"]
 
-[ext_resource type="Script" uid="uid://c2byk1vm1atip" path="res://card.gd" id="1_kikvd"]
+[ext_resource type="Script" uid="uid://c2byk1vm1atip" path="res://scripts/card.gd" id="1_kikvd"]
 [ext_resource type="FontFile" uid="uid://pqgvjroxqr2s" path="res://fonts/Xolonium-Regular.ttf" id="1_rjlel"]
 
 [node name="Card" type="ColorRect" groups=["cards"]]

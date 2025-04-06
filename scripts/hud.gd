@@ -28,7 +28,16 @@ func display_info(text: String) -> void:
 func updateScore(player1: int, player2: int) -> void:
 	playerScore = player1
 	oppScore = player2
+	$ScoreLabel.text = scoreFormatString % ['? + ' + str(oppScore), str(playerScore)]
+	
+func showdownScore(player1: int, player2: int) -> void:
+	playerScore = player1
+	oppScore = player2
 	$ScoreLabel.text = scoreFormatString % [str(oppScore), str(playerScore)]
+
+
+func set_turn(player: String):
+	$TurnTrackerLabel.text = turnTrackerFormatString % [player]
 
 
 func _on_hit_button_pressed() -> void:

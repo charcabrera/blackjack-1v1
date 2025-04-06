@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4lxv8pcrm6dl"]
+[gd_scene load_steps=9 format=3 uid="uid://d4lxv8pcrm6dl"]
 
 [ext_resource type="Script" uid="uid://cimapkrh72lw7" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cq3jltrxvm85b" path="res://card.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bgq0m8mlraghh" path="res://hud.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://c5sy4nivoel18" path="res://debug_menu.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cq3jltrxvm85b" path="res://scenes/card.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bgq0m8mlraghh" path="res://scenes/hud.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c5sy4nivoel18" path="res://scenes/debug_menu.tscn" id="4_lquwl"]
+[ext_resource type="AudioStream" uid="uid://d138ig63bl8so" path="res://art/dealCard.ogg" id="5_lquwl"]
 
 [sub_resource type="Curve2D" id="Curve2D_1bvp3"]
 _data = {
@@ -16,6 +17,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 128, 64, 0, 0, 0, 0, 1024, 64)
 }
 point_count = 2
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lquwl"]
+random_pitch = 1.2
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("5_lquwl")
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
@@ -45,7 +52,11 @@ curve = SubResource("Curve2D_lquwl")
 [node name="CardSpawnLocation" type="PathFollow2D" parent="P2HandPath"]
 position = Vector2(128, 64)
 
+[node name="CardSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_lquwl")
+
 [connection signal="hit" from="HUD" to="." method="_on_hud_hit"]
+[connection signal="stay" from="HUD" to="." method="_on_hud_stay"]
 [connection signal="hit" from="DebugMenu" to="." method="_on_debug_menu_hit"]
 [connection signal="reset" from="DebugMenu" to="." method="_on_debug_menu_reset"]
 [connection signal="showdown" from="DebugMenu" to="." method="_on_debug_menu_showdown"]

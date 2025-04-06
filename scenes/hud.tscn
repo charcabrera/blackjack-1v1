@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgq0m8mlraghh"]
 
-[ext_resource type="Script" uid="uid://ctqx3e8el1eku" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="Script" uid="uid://ctqx3e8el1eku" path="res://scripts/hud.gd" id="1_64ctp"]
 [ext_resource type="FontFile" uid="uid://pqgvjroxqr2s" path="res://fonts/Xolonium-Regular.ttf" id="2_8sq4i"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -55,7 +55,6 @@ theme_override_fonts/font = ExtResource("2_8sq4i")
 theme_override_font_sizes/font_size = 26
 
 [node name="TurnTrackerLabel" type="Label" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

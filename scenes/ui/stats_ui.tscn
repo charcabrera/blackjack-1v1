@@ -8,6 +8,7 @@
 [node name="StatsUI" type="HBoxContainer"]
 offset_right = 320.0
 offset_bottom = 64.0
+alignment = 1
 script = ExtResource("1_3ktwi")
 
 [node name="Block" type="HBoxContainer" parent="."]

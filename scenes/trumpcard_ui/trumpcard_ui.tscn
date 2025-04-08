@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://5qjt2anysbas"]
+[gd_scene load_steps=11 format=3 uid="uid://5qjt2anysbas"]
 
 [ext_resource type="Script" uid="uid://cvhn303xumsq4" path="res://scenes/trumpcard_ui/trumpcard_ui.gd" id="1_1o5f8"]
-[ext_resource type="Theme" uid="uid://dn6c0j5ybbore" path="res://main_theme.tres" id="1_s6b5i"]
+[ext_resource type="StyleBox" uid="uid://cjhr33mmadty5" path="res://scenes/trumpcard_ui/card_base_style.tres" id="2_7me13"]
+[ext_resource type="Texture2D" uid="uid://s1s1y1t6q1qm" path="res://art/icons/block.png" id="2_ad0kc"]
 [ext_resource type="Script" uid="uid://bsjn3nr4vdhy3" path="res://scenes/trumpcard_ui/card_state_machine.gd" id="3_vyui8"]
 [ext_resource type="Script" uid="uid://c20wf2h4wt6di" path="res://scenes/trumpcard_ui/trumpcard_states/card_base_state.gd" id="4_0v41r"]
 [ext_resource type="Script" uid="uid://bpm2hxtxteo78" path="res://scenes/trumpcard_ui/trumpcard_states/card_clicked_state.gd" id="5_3q4go"]
@@ -21,33 +22,30 @@ offset_bottom = 128.0
 script = ExtResource("1_1o5f8")
 metadata/_edit_lock_ = true
 
-[node name="Color" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -64.0
-offset_right = 48.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 0.878431, 0.286275, 1)
-
-[node name="State" type="Label" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_s6b5i")
-text = "state"
-horizontal_alignment = 1
-vertical_alignment = 1
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("2_7me13")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ad0kc")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2

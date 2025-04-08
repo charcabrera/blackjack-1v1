@@ -4,8 +4,8 @@ const MOUSE_Y_SNAPBACK_THRESHOLD: int = 600
 
 
 func enter() -> void:
-	trumpcard_ui.color.color = Color.WEB_MAROON
-	trumpcard_ui.state.text = "AIMING"
+	#trumpcard_ui.color.color = Color.WEB_MAROON
+	#trumpcard_ui.state.text = "AIMING"
 	trumpcard_ui.targets.clear()
 	var offset: Vector2 = Vector2(trumpcard_ui.parent.size.x / 2, -trumpcard_ui.size.y / 2)
 	offset.x -= trumpcard_ui.size.x / 2

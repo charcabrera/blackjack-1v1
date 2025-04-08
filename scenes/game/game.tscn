@@ -4,15 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://5qjt2anysbas" path="res://scenes/trumpcard_ui/trumpcard_ui.tscn" id="2_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://bed4mrjg0hnav" path="res://scenes/card_target_selector/card_target_selector.tscn" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://by074w2l2bb06" path="res://scenes/player/player.tscn" id="2_bdhmt"]
+[ext_resource type="Resource" uid="uid://vawffbjxjfj1" path="res://players/player/player_stats.tres" id="3_87uf6"]
 [ext_resource type="Resource" uid="uid://cjefdo5jep1w4" path="res://trumpcards/remove_card.tres" id="3_kelw5"]
 [ext_resource type="Resource" uid="uid://br8f0hgveyhvf" path="res://trumpcards/shield.tres" id="4_lfrn8"]
-[ext_resource type="Texture2D" uid="uid://clspcf31mn7il" path="res://art/cards/normal/1.png" id="5_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://bfqn5o36h5opp" path="res://selectables/played_trump_card.tscn" id="8_87uf6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
 size = Vector2(1280, 512)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfrn8"]
-size = Vector2(104, 136)
 
 [node name="Game" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -40,22 +38,12 @@ position = Vector2(0, -104)
 shape = SubResource("RectangleShape2D_8cj0n")
 debug_color = Color(0, 0.6, 0.701961, 0.14902)
 
-[node name="Card" type="Area2D" parent="."]
-position = Vector2(96, 112)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Card"]
-position = Vector2(20, 20)
-scale = Vector2(0.832, 0.777143)
-texture = ExtResource("5_lfrn8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Card"]
-position = Vector2(20, 20)
-shape = SubResource("RectangleShape2D_lfrn8")
-debug_color = Color(0.872478, 0, 0.168347, 0.470588)
+[node name="PlayedTrumpCard" parent="." instance=ExtResource("8_87uf6")]
+position = Vector2(49, 30)
 
 [node name="Player" parent="." instance=ExtResource("2_bdhmt")]
 position = Vector2(1096, 312)
+stats = ExtResource("3_87uf6")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("2_5i0tg")]
 

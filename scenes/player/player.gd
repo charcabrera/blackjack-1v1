@@ -6,6 +6,7 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI as StatsUI
 
+
 func set_character_stats(value: Stats) -> void:
 	stats = value.create_instance()
 	

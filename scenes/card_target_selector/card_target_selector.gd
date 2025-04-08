@@ -53,7 +53,7 @@ func _on_card_aim_started(card: TrumpCardUI) -> void:
 	current_card = card
 
 
-func _on_card_aim_ended(card: TrumpCardUI) -> void:
+func _on_card_aim_ended(_card: TrumpCardUI) -> void:
 	targeting = false
 	card_arc.clear_points()
 	area_2d.position = Vector2.ZERO

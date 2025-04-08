@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="TrumpCard" load_steps=2 format=3 uid="uid://br8f0hgveyhvf"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://br8f0hgveyhvf"]
 
-[ext_resource type="Script" uid="uid://0f3t6vk2ro1b" path="res://custom_resources/trump_card.gd" id="1_vp33t"]
+[ext_resource type="Texture2D" uid="uid://s1s1y1t6q1qm" path="res://art/icons/block.png" id="1_gyo2h"]
+[ext_resource type="Script" uid="uid://d288trro1v3pj" path="res://trumpcards/shield.gd" id="1_vp33t"]
 
 [resource]
 script = ExtResource("1_vp33t")
 id = "shield"
 type = 1
 target = 0
+icon = ExtResource("1_gyo2h")
+tooltip_text = ""
 metadata/_custom_type_script = "uid://0f3t6vk2ro1b"

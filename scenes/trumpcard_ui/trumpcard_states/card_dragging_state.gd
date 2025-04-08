@@ -10,9 +10,10 @@ func enter() -> void:
 	if ui_layer:
 		trumpcard_ui.reparent(ui_layer)
 	
-	trumpcard_ui.color.color = Color.NAVY_BLUE
-	trumpcard_ui.state.text = "DRAGGING"
+	#trumpcard_ui.color.color = Color.NAVY_BLUE
+	#trumpcard_ui.state.text = "DRAGGING"
 	
+	trumpcard_ui.background.set("theme_override_styles/panel", trumpcard_ui.DRAG_STYLE)
 	minimum_drag_time_elapsed = false
 	var threshold_timer: SceneTreeTimer = get_tree().create_timer(DRAG_MINIMUM_THRESHOLD, false)
 	threshold_timer.timeout.connect(func() -> void: minimum_drag_time_elapsed = true)

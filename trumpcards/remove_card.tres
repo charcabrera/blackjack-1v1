@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="TrumpCard" load_steps=2 format=3 uid="uid://cjefdo5jep1w4"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cjefdo5jep1w4"]
 
-[ext_resource type="Script" uid="uid://0f3t6vk2ro1b" path="res://custom_resources/trump_card.gd" id="1_apoae"]
+[ext_resource type="Texture2D" uid="uid://byi8nx41oddop" path="res://art/cards/trumpcards/remove_card.png" id="1_56hem"]
+[ext_resource type="Script" uid="uid://du003chm378yf" path="res://trumpcards/remove_card.gd" id="2_56hem"]
 
 [resource]
-script = ExtResource("1_apoae")
+script = ExtResource("2_56hem")
 id = "remove_card"
 type = 0
 target = 1
+icon = ExtResource("1_56hem")
+tooltip_text = ""
 metadata/_custom_type_script = "uid://0f3t6vk2ro1b"

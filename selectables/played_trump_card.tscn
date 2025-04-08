@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfqn5o36h5opp"]
+
+[ext_resource type="Script" uid="uid://bvvtj5iemceem" path="res://selectables/played_trump_card.gd" id="1_e55e8"]
+[ext_resource type="Texture2D" uid="uid://ds70k4r0mpkgq" path="res://art/icons/arrow.png" id="2_4qtqs"]
+[ext_resource type="Texture2D" uid="uid://s1s1y1t6q1qm" path="res://art/icons/block.png" id="2_e55e8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qtqs"]
+size = Vector2(96, 96)
+
+[node name="PlayedTrumpCard" type="Area2D" groups=["playedtrumpcards"]]
+collision_layer = 4
+script = ExtResource("1_e55e8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(48, 48)
+scale = Vector2(0.75307, 0.75)
+texture = ExtResource("2_e55e8")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(48, 152)
+rotation = 1.5708
+texture = ExtResource("2_4qtqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, 48)
+shape = SubResource("RectangleShape2D_4qtqs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

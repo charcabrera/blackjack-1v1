@@ -24,7 +24,7 @@ func _ready() -> void:
 	Events.trump_card_aim_started.connect(_on_card_drag_or_aiming_started)
 	Events.trump_card_drag_started.connect(_on_card_drag_or_aiming_started)
 	Events.trump_card_aim_ended.connect(_on_card_drag_or_aiming_ended)
-	Events.trump_card_aim_ended.connect(_on_card_drag_or_aiming_ended)
+	Events.trump_card_drag_ended.connect(_on_card_drag_or_aiming_ended)
 	card_state_machine.init(self)
 
 

@@ -42,7 +42,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.14902)
 position = Vector2(49, 30)
 
 [node name="Player" parent="." instance=ExtResource("2_bdhmt")]
-position = Vector2(1096, 312)
+position = Vector2(1257, 370)
 stats = ExtResource("3_87uf6")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("2_5i0tg")]

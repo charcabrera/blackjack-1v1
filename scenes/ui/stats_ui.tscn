@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://d07pvbeerqfsx"]
+[gd_scene load_steps=6 format=3 uid="uid://d07pvbeerqfsx"]
 
 [ext_resource type="Script" uid="uid://yckma6ser3vp" path="res://scenes/ui/stats_ui.gd" id="1_3ktwi"]
 [ext_resource type="Texture2D" uid="uid://s1s1y1t6q1qm" path="res://art/icons/block.png" id="1_08kyh"]
 [ext_resource type="Theme" uid="uid://dn6c0j5ybbore" path="res://main_theme.tres" id="2_3ktwi"]
+[ext_resource type="Texture2D" uid="uid://dk57eup1ttf6q" path="res://art/icons/attackup.png" id="2_7klq2"]
 [ext_resource type="Texture2D" uid="uid://u2vhvmjtoqrp" path="res://art/icons/health.png" id="3_7klq2"]
 
 [node name="StatsUI" type="HBoxContainer"]
-offset_right = 320.0
-offset_bottom = 64.0
-alignment = 1
+offset_left = -125.0
+offset_top = 1.0
+offset_right = 381.0
+offset_bottom = 129.0
+scale = Vector2(0.5, 0.5)
+alignment = 2
 script = ExtResource("1_3ktwi")
 
 [node name="Block" type="HBoxContainer" parent="."]
@@ -32,6 +36,19 @@ layout_mode = 2
 texture = ExtResource("3_7klq2")
 
 [node name="HealthLabel" type="Label" parent="Health"]
+layout_mode = 2
+theme = ExtResource("2_3ktwi")
+theme_override_font_sizes/font_size = 48
+text = "5"
+
+[node name="Attack" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AttackImage" type="TextureRect" parent="Attack"]
+layout_mode = 2
+texture = ExtResource("2_7klq2")
+
+[node name="AttackLabel" type="Label" parent="Attack"]
 layout_mode = 2
 theme = ExtResource("2_3ktwi")
 theme_override_font_sizes/font_size = 48

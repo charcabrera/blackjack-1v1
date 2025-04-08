@@ -8,10 +8,11 @@
 script = ExtResource("1_gmlin")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_dovo2")
 
 [node name="StatsUI" parent="." instance=ExtResource("2_gmlin")]
-offset_left = -168.0
-offset_top = 72.0
-offset_right = 168.0
-offset_bottom = 200.0
+offset_left = -250.0
+offset_top = 75.0
+offset_right = 256.0
+offset_bottom = 203.0

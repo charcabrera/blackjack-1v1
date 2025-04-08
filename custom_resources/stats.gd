@@ -9,6 +9,7 @@ signal stats_changed
 
 var health: int: set = set_health
 var block: int: set = set_block
+var attack: int = 1: set = set_attack
 var bj_hand: CardPile
 var trump_card_hand: TrumpCardPile
 
@@ -20,6 +21,11 @@ func set_health(value: int) -> void:
 
 func set_block(value: int) -> void:
 	block = clampi(value, 0, 999)
+	stats_changed.emit()
+
+
+func set_attack(value: int) -> void:
+	attack = clampi(value, 0, 999)
 	stats_changed.emit()
 
 

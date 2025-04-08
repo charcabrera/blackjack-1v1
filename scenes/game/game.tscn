@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6qo3420w2ppf"]
+
+[ext_resource type="Script" uid="uid://jmnu3gv1vuwx" path="res://scenes/game/trump_card_hand.gd" id="1_7h61r"]
+[ext_resource type="PackedScene" uid="uid://5qjt2anysbas" path="res://scenes/trumpcard_ui/trumpcard_ui.tscn" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://bed4mrjg0hnav" path="res://scenes/card_target_selector/card_target_selector.tscn" id="2_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://by074w2l2bb06" path="res://scenes/player/player.tscn" id="2_bdhmt"]
+[ext_resource type="Resource" uid="uid://cjefdo5jep1w4" path="res://trumpcards/remove_card.tres" id="3_kelw5"]
+[ext_resource type="Resource" uid="uid://br8f0hgveyhvf" path="res://trumpcards/shield.tres" id="4_lfrn8"]
+[ext_resource type="Texture2D" uid="uid://clspcf31mn7il" path="res://art/cards/normal/1.png" id="5_lfrn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
+size = Vector2(1280, 512)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfrn8"]
+size = Vector2(104, 136)
+
+[node name="Game" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+color = Color(0.0666667, 0.0470588, 0.0745098, 1)
+
+[node name="CardDropArea" type="Area2D" parent="."]
+position = Vector2(640, 360)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(0, -104)
+shape = SubResource("RectangleShape2D_8cj0n")
+debug_color = Color(0, 0.6, 0.701961, 0.14902)
+
+[node name="Card" type="Area2D" parent="."]
+position = Vector2(96, 112)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Card"]
+position = Vector2(20, 20)
+scale = Vector2(0.832, 0.777143)
+texture = ExtResource("5_lfrn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_lfrn8")
+debug_color = Color(0.872478, 0, 0.168347, 0.470588)
+
+[node name="Player" parent="." instance=ExtResource("2_bdhmt")]
+position = Vector2(1096, 312)
+
+[node name="CardTargetSelector" parent="." instance=ExtResource("2_5i0tg")]
+
+[node name="GameUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="TrumpCardHand" type="HBoxContainer" parent="GameUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -136.0
+offset_right = 480.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_7h61r")
+
+[node name="TrumpCardUI" parent="GameUI/TrumpCardHand" instance=ExtResource("2_0sr1o")]
+layout_mode = 2
+card = ExtResource("3_kelw5")
+
+[node name="TrumpCardUI2" parent="GameUI/TrumpCardHand" instance=ExtResource("2_0sr1o")]
+layout_mode = 2
+card = ExtResource("3_kelw5")
+
+[node name="TrumpCardUI3" parent="GameUI/TrumpCardHand" instance=ExtResource("2_0sr1o")]
+layout_mode = 2
+card = ExtResource("4_lfrn8")

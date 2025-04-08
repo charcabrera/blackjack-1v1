@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d07pvbeerqfsx"]
+
+[ext_resource type="Script" uid="uid://yckma6ser3vp" path="res://scenes/ui/stats_ui.gd" id="1_3ktwi"]
+[ext_resource type="Texture2D" uid="uid://s1s1y1t6q1qm" path="res://art/icons/block.png" id="1_08kyh"]
+[ext_resource type="Theme" uid="uid://dn6c0j5ybbore" path="res://main_theme.tres" id="2_3ktwi"]
+[ext_resource type="Texture2D" uid="uid://u2vhvmjtoqrp" path="res://art/icons/health.png" id="3_7klq2"]
+
+[node name="StatsUI" type="HBoxContainer"]
+offset_right = 320.0
+offset_bottom = 64.0
+script = ExtResource("1_3ktwi")
+
+[node name="Block" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="BlockImage" type="TextureRect" parent="Block"]
+layout_mode = 2
+texture = ExtResource("1_08kyh")
+
+[node name="BlockLabel" type="Label" parent="Block"]
+layout_mode = 2
+theme = ExtResource("2_3ktwi")
+theme_override_font_sizes/font_size = 48
+text = "5"
+
+[node name="Health" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HealthImage" type="TextureRect" parent="Health"]
+layout_mode = 2
+texture = ExtResource("3_7klq2")
+
+[node name="HealthLabel" type="Label" parent="Health"]
+layout_mode = 2
+theme = ExtResource("2_3ktwi")
+theme_override_font_sizes/font_size = 48
+text = "5"

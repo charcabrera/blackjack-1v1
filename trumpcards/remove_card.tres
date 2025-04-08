@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TrumpCard" load_steps=2 format=3 uid="uid://cjefdo5jep1w4"]
+
+[ext_resource type="Script" uid="uid://0f3t6vk2ro1b" path="res://custom_resources/trump_card.gd" id="1_apoae"]
+
+[resource]
+script = ExtResource("1_apoae")
+id = "remove_card"
+type = 0
+target = 1
+metadata/_custom_type_script = "uid://0f3t6vk2ro1b"

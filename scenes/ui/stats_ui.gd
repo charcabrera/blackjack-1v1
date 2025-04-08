@@ -2,9 +2,9 @@ class_name StatsUI
 extends HBoxContainer
 
 @onready var block: HBoxContainer = $Block
-@onready var block_label: Label = %BlockLabel
+@onready var block_label: Label = $Block/BlockLabel
 @onready var health: HBoxContainer = $Health
-@onready var health_label: Label = %HealthLabel
+@onready var health_label: Label = $Health/HealthLabel
 
 
 func update_stats(stats: Stats) -> void:

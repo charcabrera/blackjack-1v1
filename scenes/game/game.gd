@@ -19,5 +19,5 @@ func _ready() -> void:
 
 
 func start_battle(new_stats: Stats) -> void:
-	player_handler.start_battle(player_stats)
-	player_handler.draw_cards(player_stats.cards_per_turn)
+	player_handler.start_battle(new_stats)
+	player_handler.draw_cards(new_stats.cards_per_turn)

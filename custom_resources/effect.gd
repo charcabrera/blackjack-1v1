@@ -6,5 +6,5 @@ func execute(_targets: Array[Node]) -> void:
 	pass
 
 
-func on_remove(_targets: Array[Node]) -> void:
+func on_remove(_played_by: Player) -> void:
 	pass

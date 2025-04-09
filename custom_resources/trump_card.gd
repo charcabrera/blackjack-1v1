@@ -39,12 +39,16 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 
 
 func play(targets: Array[Node]) -> void:
-	Events.card_played.emit(self)
+	Events.player_card_played.emit(self)
 	
 	if is_single_targeted():
 		apply_effects(targets)
 	else:
 		apply_effects(_get_targets(targets))
+	
+	if remains():
+		print("this card will remain")
+		
 
 
 func apply_effects(_targets: Array[Node]) -> void:

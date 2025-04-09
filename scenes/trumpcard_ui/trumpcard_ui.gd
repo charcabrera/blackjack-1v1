@@ -38,10 +38,7 @@ func play() -> void:
 		return
 	print(targets)
 	card.play(targets)
-	if card.type == TrumpCard.Type.CONSUME:
-		queue_free()
-	else:
-		return
+	queue_free()
 
 
 func animate_to_position(new_position: Vector2, duration: float) -> void:

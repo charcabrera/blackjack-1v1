@@ -10,3 +10,7 @@ func execute(targets: Array[Node]) -> void:
 			continue
 		if target is Player:
 			target.stats.block += amount
+
+
+func on_remove(played_by: Player) -> void:
+	played_by.stats.block -= amount

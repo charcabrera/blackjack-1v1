@@ -7,4 +7,4 @@ func execute(targets: Array[Node]) -> void:
 		if not target:
 			continue
 		if target is PlayedTrumpCard:
-			target.queue_free()
+			target.destroy()

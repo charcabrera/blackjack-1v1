@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bed4mrjg0hnav" path="res://scenes/card_target_selector/card_target_selector.tscn" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://by074w2l2bb06" path="res://scenes/player/player.tscn" id="2_bdhmt"]
 [ext_resource type="Resource" uid="uid://vawffbjxjfj1" path="res://players/player/player_stats.tres" id="3_87uf6"]
+[ext_resource type="Script" uid="uid://r6grghmam4ms" path="res://scenes/game/player_trump_card_field.gd" id="3_kp23o"]
 [ext_resource type="Script" uid="uid://csl5k03qxsxve" path="res://scenes/ui/game_ui.gd" id="5_4j704"]
 [ext_resource type="Script" uid="uid://b7s3y1ruq04cx" path="res://scenes/player/player_handler.gd" id="6_2a8rs"]
 [ext_resource type="Resource" uid="uid://7t4qi1ojp02" path="res://players/player/draw_pile.tres" id="7_4j704"]
-[ext_resource type="PackedScene" uid="uid://bfqn5o36h5opp" path="res://selectables/played_trump_card.tscn" id="8_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cciih442f1w4n" path="res://scenes/trumpcard_ui/tooltip.tscn" id="9_2a8rs"]
 [ext_resource type="Theme" uid="uid://dn6c0j5ybbore" path="res://main_theme.tres" id="11_kp23o"]
 
@@ -43,10 +43,19 @@ position = Vector2(0, -104)
 shape = SubResource("RectangleShape2D_8cj0n")
 debug_color = Color(0, 0.6, 0.701961, 0.14902)
 
-[node name="PlayedTrumpCard" parent="." instance=ExtResource("8_87uf6")]
-position = Vector2(49, 30)
+[node name="CardField" type="VBoxContainer" parent="."]
+offset_top = 128.0
+offset_right = 640.0
+offset_bottom = 384.0
+mouse_filter = 2
+
+[node name="PlayerTrumpCardField" type="HBoxContainer" parent="CardField"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3_kp23o")
 
 [node name="Player" parent="." instance=ExtResource("2_bdhmt")]
+unique_name_in_owner = true
 position = Vector2(1257, 370)
 stats = ExtResource("3_87uf6")
 

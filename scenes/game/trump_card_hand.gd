@@ -9,8 +9,8 @@ var cards_played_this_turn: int = 0
 
 
 func _ready() -> void:
-	Events.card_played.connect(_on_trump_card_played)
-	Events.player_hand_drawn.connect(add_card)
+	Events.player_card_played.connect(_on_trump_card_played)
+	#Events.player_hand_drawn.connect(add_card)
 	
 
 

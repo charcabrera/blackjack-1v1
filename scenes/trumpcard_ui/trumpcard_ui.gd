@@ -14,6 +14,7 @@ const HOVER_STYLE: StyleBoxFlat = preload("res://scenes/trumpcard_ui/card_hover_
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var targets: Array[Node] = []
+@onready var original_index: int = self.get_index()
 
 var parent: Control
 var tween: Tween

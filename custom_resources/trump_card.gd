@@ -42,11 +42,13 @@ func play(targets: Array[Node]) -> void:
 	Events.card_played.emit(self)
 	
 	if is_single_targeted():
-		print('here')
 		apply_effects(targets)
 	else:
 		apply_effects(_get_targets(targets))
 
 
 func apply_effects(_targets: Array[Node]) -> void:
+	pass
+
+func on_remove() -> void:
 	pass

@@ -25,7 +25,7 @@ texture = ExtResource("1_08kyh")
 [node name="BlockLabel" type="Label" parent="Block"]
 layout_mode = 2
 theme = ExtResource("2_3ktwi")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 64
 text = "5"
 
 [node name="Health" type="HBoxContainer" parent="."]
@@ -38,7 +38,7 @@ texture = ExtResource("3_7klq2")
 [node name="HealthLabel" type="Label" parent="Health"]
 layout_mode = 2
 theme = ExtResource("2_3ktwi")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 64
 text = "5"
 
 [node name="Attack" type="HBoxContainer" parent="."]
@@ -51,5 +51,5 @@ texture = ExtResource("2_7klq2")
 [node name="AttackLabel" type="Label" parent="Attack"]
 layout_mode = 2
 theme = ExtResource("2_3ktwi")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 64
 text = "5"

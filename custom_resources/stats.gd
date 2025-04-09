@@ -10,8 +10,9 @@ signal stats_changed
 var health: int: set = set_health
 var block: int: set = set_block
 var attack: int = 1: set = set_attack
+var hand: TrumpCardPile
 var bj_hand: CardPile
-var trump_card_hand: TrumpCardPile
+var trump_card_pile: TrumpCardPile
 
 
 func set_health(value: int) -> void:
@@ -46,6 +47,7 @@ func create_instance() -> Resource:
 	var instance: Stats = self.duplicate()
 	instance.health = max_health
 	instance.block = 0
+	instance.hand = TrumpCardPile.new()
 	instance.bj_hand = CardPile.new()
-	instance.trump_card_hand = TrumpCardPile.new()
+	instance.trump_card_pile = TrumpCardPile.new()
 	return instance

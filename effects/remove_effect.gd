@@ -3,7 +3,6 @@ extends Effect
 
 
 func execute(targets: Array[Node]) -> void:
-	print(targets)
 	for target: Node in targets:
 		if not target:
 			continue

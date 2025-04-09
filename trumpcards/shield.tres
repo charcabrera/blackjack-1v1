@@ -9,5 +9,5 @@ id = "shield"
 type = 1
 target = 0
 icon = ExtResource("1_gyo2h")
-tooltip_text = ""
+tooltip_text = "Adds +1 block. Remains on board."
 metadata/_custom_type_script = "uid://0f3t6vk2ro1b"

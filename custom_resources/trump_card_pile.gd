@@ -15,3 +15,7 @@ func draw_card() -> TrumpCard:
 	var card: TrumpCard = cards.pop_at(idx)
 	trump_card_pile_size_changed.emit(cards.size())
 	return card
+
+
+func shuffle() -> void:
+	cards.shuffle()

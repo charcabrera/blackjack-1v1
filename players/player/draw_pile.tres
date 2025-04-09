@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TrumpCardPile" load_steps=5 format=3 uid="uid://7t4qi1ojp02"]
+
+[ext_resource type="Script" uid="uid://0f3t6vk2ro1b" path="res://custom_resources/trump_card.gd" id="1_qy2ub"]
+[ext_resource type="Script" uid="uid://c53t2ujm875y6" path="res://custom_resources/trump_card_pile.gd" id="2_ufm1i"]
+[ext_resource type="Resource" uid="uid://cjefdo5jep1w4" path="res://trumpcards/remove_card.tres" id="2_uknxl"]
+[ext_resource type="Resource" uid="uid://br8f0hgveyhvf" path="res://trumpcards/shield.tres" id="3_6yhqh"]
+
+[resource]
+script = ExtResource("2_ufm1i")
+cards = Array[ExtResource("1_qy2ub")]([ExtResource("2_uknxl"), ExtResource("3_6yhqh"), ExtResource("2_uknxl"), ExtResource("3_6yhqh"), ExtResource("2_uknxl"), ExtResource("3_6yhqh"), ExtResource("2_uknxl")])
+metadata/_custom_type_script = "uid://c53t2ujm875y6"

@@ -9,6 +9,7 @@ func enter() -> void:
 	played = false
 	
 	if not trumpcard_ui.targets.is_empty():
+		Events.tooltip_hide_requested.emit()
 		played = true
 		trumpcard_ui.play()
 

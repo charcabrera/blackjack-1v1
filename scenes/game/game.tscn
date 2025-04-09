@@ -1,18 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6qo3420w2ppf"]
+[gd_scene load_steps=13 format=3 uid="uid://c6qo3420w2ppf"]
 
 [ext_resource type="Script" uid="uid://jmnu3gv1vuwx" path="res://scenes/game/trump_card_hand.gd" id="1_7h61r"]
-[ext_resource type="PackedScene" uid="uid://5qjt2anysbas" path="res://scenes/trumpcard_ui/trumpcard_ui.tscn" id="2_0sr1o"]
+[ext_resource type="Script" uid="uid://dj61635qwfxyp" path="res://scenes/game/game.gd" id="1_kp23o"]
 [ext_resource type="PackedScene" uid="uid://bed4mrjg0hnav" path="res://scenes/card_target_selector/card_target_selector.tscn" id="2_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://by074w2l2bb06" path="res://scenes/player/player.tscn" id="2_bdhmt"]
 [ext_resource type="Resource" uid="uid://vawffbjxjfj1" path="res://players/player/player_stats.tres" id="3_87uf6"]
-[ext_resource type="Resource" uid="uid://cjefdo5jep1w4" path="res://trumpcards/remove_card.tres" id="3_kelw5"]
-[ext_resource type="Resource" uid="uid://br8f0hgveyhvf" path="res://trumpcards/shield.tres" id="4_lfrn8"]
+[ext_resource type="Script" uid="uid://csl5k03qxsxve" path="res://scenes/ui/game_ui.gd" id="5_4j704"]
+[ext_resource type="Script" uid="uid://b7s3y1ruq04cx" path="res://scenes/player/player_handler.gd" id="6_2a8rs"]
+[ext_resource type="Resource" uid="uid://7t4qi1ojp02" path="res://players/player/draw_pile.tres" id="7_4j704"]
 [ext_resource type="PackedScene" uid="uid://bfqn5o36h5opp" path="res://selectables/played_trump_card.tscn" id="8_87uf6"]
+[ext_resource type="PackedScene" uid="uid://cciih442f1w4n" path="res://scenes/trumpcard_ui/tooltip.tscn" id="9_2a8rs"]
+[ext_resource type="Theme" uid="uid://dn6c0j5ybbore" path="res://main_theme.tres" id="11_kp23o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
 size = Vector2(1280, 512)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_kp23o")
+player_stats = ExtResource("3_87uf6")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]
@@ -47,7 +52,13 @@ stats = ExtResource("3_87uf6")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("2_5i0tg")]
 
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("trump_card_hand")]
+script = ExtResource("6_2a8rs")
+trump_card_hand = NodePath("../GameUI/TrumpCardHand")
+trump_card_pile = ExtResource("7_4j704")
+
 [node name="GameUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("5_4j704")
 
 [node name="TrumpCardHand" type="HBoxContainer" parent="GameUI"]
 anchors_preset = 7
@@ -63,14 +74,29 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("1_7h61r")
 
-[node name="TrumpCardUI" parent="GameUI/TrumpCardHand" instance=ExtResource("2_0sr1o")]
-layout_mode = 2
-card = ExtResource("3_kelw5")
+[node name="Tooltip" parent="GameUI" instance=ExtResource("9_2a8rs")]
+offset_top = 24.0
+offset_bottom = 168.0
 
-[node name="TrumpCardUI2" parent="GameUI/TrumpCardHand" instance=ExtResource("2_0sr1o")]
-layout_mode = 2
-card = ExtResource("3_kelw5")
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -192.0
+offset_right = -16.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("11_kp23o")
 
-[node name="TrumpCardUI3" parent="GameUI/TrumpCardHand" instance=ExtResource("2_0sr1o")]
+[node name="HitButton" type="Button" parent="GameUI/VBoxContainer"]
 layout_mode = 2
-card = ExtResource("4_lfrn8")
+text = "Hit"
+
+[node name="StayButton" type="Button" parent="GameUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stay"

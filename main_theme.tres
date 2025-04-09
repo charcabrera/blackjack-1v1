@@ -1,7 +1,24 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dn6c0j5ybbore"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dn6c0j5ybbore"]
 
-[ext_resource type="FontFile" uid="uid://pqgvjroxqr2s" path="res://fonts/Xolonium-Regular.ttf" id="1_470mv"]
+[ext_resource type="StyleBox" uid="uid://bijuotsofke2s" path="res://scenes/trumpcard_ui/card_hover_style.tres" id="1_0omi4"]
+[ext_resource type="StyleBox" uid="uid://cjhr33mmadty5" path="res://scenes/trumpcard_ui/card_base_style.tres" id="1_a2l2q"]
+[ext_resource type="FontFile" uid="uid://d1o7675cyioo3" path="res://fonts/Texturina-VariableFont_opsz,wght.ttf" id="2_a2l2q"]
+[ext_resource type="StyleBox" uid="uid://b6xbuytli2848" path="res://scenes/trumpcard_ui/card_drag_style.tres" id="3_58jnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58jnp"]
+bg_color = Color(0.831373, 0.686275, 0.215686, 0.631373)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.381703, 0.381703, 0.381703, 1)
 
 [resource]
-default_font = ExtResource("1_470mv")
+default_font = ExtResource("2_a2l2q")
 default_font_size = 20
+Button/font_sizes/font_size = 48
+Button/styles/disabled = SubResource("StyleBoxFlat_58jnp")
+Button/styles/hover = ExtResource("1_0omi4")
+Button/styles/normal = ExtResource("1_a2l2q")
+Button/styles/pressed = ExtResource("3_58jnp")
+PanelContainer/styles/panel = ExtResource("1_a2l2q")

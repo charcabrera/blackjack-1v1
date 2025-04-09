@@ -50,5 +50,5 @@ func play(targets: Array[Node]) -> void:
 func apply_effects(_targets: Array[Node]) -> void:
 	pass
 
-func on_remove() -> void:
+func on_remove(_played_by: Player) -> void:
 	pass

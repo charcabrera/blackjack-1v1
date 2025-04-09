@@ -22,8 +22,14 @@ func add_card(card: TrumpCard) -> void:
 	new_card_ui.parent = self
 
 
+func enable_hand() -> void:
+	for card: TrumpCardUI in get_children():
+		if card.playable:
+			card.disabled = false
+
+
 func disable_hand() -> void:
-	for card: Node in get_children():
+	for card: TrumpCardUI in get_children():
 		card.disabled = true
 
 

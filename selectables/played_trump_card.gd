@@ -4,6 +4,8 @@ extends Area2D
 @export var art: Texture2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var arrow: Sprite2D = $Arrow
+@onready var card: TrumpCard
+@onready var played_by: Player
 
 
 func update_card() -> void:
@@ -14,6 +16,7 @@ func update_card() -> void:
 
 
 func destroy() -> void:
+	card.on_remove(played_by)
 	queue_free()
 
 

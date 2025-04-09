@@ -19,6 +19,7 @@ func start_battle(player_stats: Stats) -> void:
 func start_turn() -> void:
 	character.block = 0
 	draw_cards(character.cards_per_turn)
+	trump_card_hand.enable_hand()
 
 
 func end_turn() -> void:

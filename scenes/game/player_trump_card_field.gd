@@ -9,6 +9,8 @@ func _ready() -> void:
 
 
 func _on_card_played(card: TrumpCard) -> void:
+	if not card.remains():
+		return
 	var played_card: PlayedTrumpCard = PLAYED_TRUMP_CARD.instantiate()
 	played_card.card = card
 	played_card.played_by = %Player
